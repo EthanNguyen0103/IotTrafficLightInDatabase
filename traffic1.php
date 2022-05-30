@@ -5,9 +5,10 @@ include("config.php");
 
 $color = $_POST["r1"];
 $time = $_POST["t1"];
+$chance = $_POST["c1"];
 
 $sql = "UPDATE traffic
-SET color= $color,time = $time
+SET color= $color,time = $time, isChanged = $chance
 WHERE stt = 2"; 
 
 if(!mysqli_query($conn,$sql)){

@@ -1,4 +1,6 @@
 <?php
+  header("refresh: 1");
+
   header("Content-Type: application/json");
 
   include("config.php");

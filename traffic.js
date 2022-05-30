@@ -1,3 +1,17 @@
+window.onload = function(){
+  let button = document.getElementById('clickButton');
+  let button1 = document.getElementById('clickButton1');
+  let button2 = document.getElementById('clickButton2');
+  setInterval(function(){
+      button.click();
+      button1.click();
+      button2.click();
+  }, 500);  
+};
+
+
+
+
 $(document).ready(
   function(){
     // send data xuong database
@@ -32,7 +46,8 @@ $(document).ready(
             td3 = 'green';
           }
           else if ($color=='4')
-          {  td1 = 'black';
+          {  
+            td1 = 'black';
             td2 = 'black';
             td3 = 'black';
           }
@@ -50,128 +65,46 @@ $(document).ready(
 function redlight()
 {
 document.getElementById('text').value = 1;
+document.getElementById('timeleft').value = 99;
+document.getElementById('timechance').value = 1;
+
 }
 function yellowlight()
 {
 document.getElementById('text').value = 2;
+document.getElementById('timeleft').value = 99;
+document.getElementById('timechance').value = 1;
+
 }
 function greenlight()
 {
 document.getElementById('text').value = 3;
+document.getElementById('timeleft').value = 99;
+document.getElementById('timechance').value = 1;
+
 }
 function auto()
 {
 document.getElementById('text').value = 4;
+document.getElementById('timeleft').value = 00;
+document.getElementById('timechance').value = 1;
 }
+function show() {
+  let checkBox = document.getElementById("checkb");
+  let text = document.getElementById("text");
+  let timeleft = document.getElementById("timeleft");
+  let timechance = document.getElementById("timechance");
 
-
-
-function startTrafficSignal () {
-  const green = document.getElementById("goLight");
-  const red = document.getElementById("stopLight");
-  const yellow = document.getElementById("slowLight");
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-setTimeout(function () {
-    green.style.backgroundColor= 'black';
-    red.style.backgroundColor= 'black';
-    yellow.style.backgroundColor= 'yellow';
-    document.getElementById('time').innerText = 'TIMELEFT: 1';
-    document.getElementById('text').value = 2;
-    document.getElementById('timeleft').value = 1;
-},1000);
-  setTimeout(function () {
-    green.style.backgroundColor= 'black';
-    red.style.backgroundColor= 'black';
-    yellow.style.backgroundColor= 'yellow';
-    document.getElementById('time').innerText = 'TIMELEFT: 0';
-    document.getElementById('text').value = 2;
-    document.getElementById('timeleft').value = 0;
-},2000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 5'
-},3000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 4'
-},4000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 3'
-},5000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 2'
-},6000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 1'
-},7000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 0'
-},8000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 5'
-},9000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 4'
-},10000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 3'
-},11000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 2'
-},12000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 1'
-},13000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time').innerText = 'TIMELEFT: 0'
-},14000);
-
-setInterval(function () {
-  startTrafficSignal();
-},15000);
-}
-
-function timer()
-{
-  if(document.getElementById('text').value =='4')
+  if (checkBox.checked == true){
+    text.type = 'text';
+    timeleft.type = 'text';
+    timechance.type = 'text';
+  } else 
   {
-    startTrafficSignal();
+    text.type = 'hidden';
+    timeleft.type = 'hidden';
+    timechance.type = 'hidden';
+
   }
 }
 
@@ -232,130 +165,52 @@ $(document).ready(
 function redlight1()
 {
 document.getElementById('text1').value = 1;
+document.getElementById('timeleft1').value = 99;
+document.getElementById('timechance1').value = 1;
+
 }
 function yellowlight1()
 {
 document.getElementById('text1').value = 2;
+document.getElementById('timeleft1').value = 99;
+document.getElementById('timechance1').value = 1;
 
 }
 function greenlight1()
 {
 document.getElementById('text1').value = 3;
+document.getElementById('timeleft1').value = 99;
+document.getElementById('timechance').value = 1;
 
 }
 function auto1()
 {
 document.getElementById('text1').value = 4;
+document.getElementById('timeleft1').value = 00;
+document.getElementById('timechance1').value = 1;
 
 }
-function startTrafficSignal1 () {
-  const green = document.getElementById("goLight1");
-  const red = document.getElementById("stopLight1");
-  const yellow = document.getElementById("slowLight1");
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-setTimeout(function () {
-    green.style.backgroundColor= 'black';
-    red.style.backgroundColor= 'black';
-    yellow.style.backgroundColor= 'yellow';
-    document.getElementById('time1').innerText = 'TIMELEFT: 1'
-},1000);
-  setTimeout(function () {
-    green.style.backgroundColor= 'black';
-    red.style.backgroundColor= 'black';
-    yellow.style.backgroundColor= 'yellow';
-    document.getElementById('time1').innerText = 'TIMELEFT: 0'
-},2000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 5'
-},3000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 4'
-},4000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 3'
-},5000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 2'
-},6000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 1'
-},7000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 0'
-},8000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 5'
-},9000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 4'
-},10000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 3'
-},11000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 2'
-},12000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 1'
-},13000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time1').innerText = 'TIMELEFT: 0'
-},14000);
+function show1() {
+  let checkBox1 = document.getElementById("checkb1");
+  let text1 = document.getElementById("text1");
+  let timeleft1 = document.getElementById("timeleft1");
+  let timechance1 = document.getElementById("timechance1");
 
-setInterval(function () {
-  startTrafficSignal1();
-},15000);
-}
-
-function timer1()
-{
-  if(document.getElementById('text1').value =='4')
+  if (checkBox1.checked == true){
+    text1.type = 'text';
+    timeleft1.type = 'text';
+    timechance1.type = 'text';
+  } else
   {
-    startTrafficSignal1();
-    var button = document.getElementById('clickButton');
-    setInterval(function(){
-        button.click();
-    },1000);  // this will make it click again every 1000 miliseconds
+    text1.type = 'hidden';
+    timeleft1.type = 'hidden';
+    timechance1.type = 'hidden';
   }
 }
+
+
+
+
 
 
 $(document).ready(
@@ -412,123 +267,47 @@ $(document).ready(
 function redlight2()
 {
 document.getElementById('text2').value = 1;
+document.getElementById('timeleft2').value = 99;
+document.getElementById('timechance2').value = 1;
+
 }
 function yellowlight2()
 {
 document.getElementById('text2').value = 2;
+document.getElementById('timeleft2').value = 99;
+document.getElementById('timechance2').value = 1;
 
 }
 function greenlight2()
 {
 document.getElementById('text2').value = 3;
+document.getElementById('timeleft2').value = 99;
+document.getElementById('timechance2').value = 1;
+
 
 }
 function auto2()
 {
 document.getElementById('text2').value = 4;
-
-}
-function startTrafficSignal2 () {
-  const green = document.getElementById("goLight2");
-  const red = document.getElementById("stopLight2");
-  const yellow = document.getElementById("slowLight2");
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-setTimeout(function () {
-    green.style.backgroundColor= 'black';
-    red.style.backgroundColor= 'black';
-    yellow.style.backgroundColor= 'yellow';
-    document.getElementById('time2').innerText = 'TIMELEFT: 1'
-},1000);
-  setTimeout(function () {
-    green.style.backgroundColor= 'black';
-    red.style.backgroundColor= 'black';
-    yellow.style.backgroundColor= 'yellow';
-    document.getElementById('time2').innerText = 'TIMELEFT: 0'
-},2000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 5'
-},3000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 4'
-},4000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 3'
-},5000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 2'
-},6000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 1'
-},7000);
-setTimeout(function () {
-  green.style.backgroundColor= 'green';
-  red.style.backgroundColor= 'black';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 0'
-},8000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 5'
-},9000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 4'
-},10000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 3'
-},11000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 2'
-},12000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 1'
-},13000);
-setTimeout(function () {
-  green.style.backgroundColor= 'black';
-  red.style.backgroundColor= 'red';
-  yellow.style.backgroundColor= 'black';
-  document.getElementById('time2').innerText = 'TIMELEFT: 0'
-},14000);
-
-setInterval(function () {
-  startTrafficSignal2();
-},15000);
+document.getElementById('timeleft2').value = 00;
+document.getElementById('timechance2').value = 1;
 }
 
-function timer2()
-{
-  if(document.getElementById('text2').value =='4')
+
+function show2() {
+  let checkBox2 = document.getElementById("checkb2");
+  let text2 = document.getElementById("text2");
+  let timeleft2 = document.getElementById("timeleft2");
+  let timechance2 = document.getElementById("timechance2");
+  if (checkBox2.checked == true){
+    text2.type = 'text';
+    timeleft2.type = 'text';
+    timechance2.type = 'text';
+  } 
+  else
   {
-    startTrafficSignal2();
+    text2.type = 'hidden';
+    timeleft2.type = 'hidden';
+    timechance2.type= 'hidden';
   }
 }

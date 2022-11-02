@@ -7,4 +7,4 @@ include: 2 mode AUTO and MANUAL
   - when you chose color it don't affect another traffic lights
 - In AUTO:
   - Choose cycle you want
-  - When you chose color it don't affect another traffic lights
+  - When you choose color it don't affect another traffic lights
